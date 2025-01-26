@@ -1,0 +1,522 @@
+@import url('https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&display=swap');
+
+@font-face {
+  font-family: 'GrifterBold';
+  src: url('../fonts/grifterbold.woff2') format('woff2');
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Host Grotesk' serif;
+  font-weight: 400;
+  background-color: #fff;
+  color: #000;
+  overflow-x: hidden;
+}
+
+.grifterBold {
+  font-family: 'GrifterBold';
+  font-weight: bold;
+}
+
+.flexy {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.itemsStart {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.itemsEnd {
+  display: flex;
+  align-items: end;
+  justify-content: end;
+}
+
+.flexIc {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.flexBetween {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.polygonClipath {
+  clip-path: polygon(100% 0, 100% 67%, 80% 100%, 0 100%, 0 33%, 17% 0);
+}
+
+.tabsButtons {
+  background: transparent;
+  border: 1px solid #000 !important;
+  border-radius: 8px;
+  color: #000;
+  font-weight: 500;
+  font-family: 'GrifterBold';
+  text-transform: uppercase;
+  --webkit-clip-path: polygon(
+    30% 0,
+    100% 0,
+    100% 60%,
+    70% 100%,
+    0 100%,
+    0 45%
+  ) !important;
+  clip-path: polygon(
+    30% 0,
+    100% 0,
+    100% 60%,
+    70% 100%,
+    0 100%,
+    0 45%
+  ) !important;
+  /* --webkit-mask: paint(polygon-border); */
+  shape-rendering: polygon(
+    30% 0,
+    100% 0,
+    100% 60%,
+    70% 100%,
+    0 100%,
+    0 45%
+  ) !important;
+}
+
+.activateTabs:active {
+  background: #ff0009 !important;
+  color: #fff;
+  border: 1px solid #ff0009;
+}
+
+.greyPatt {
+  position: relative;
+}
+
+.greyPatt::before {
+  position: absolute;
+  content: '';
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  z-index: -1;
+  background-image: url('/assets/images/greyBgPatt.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.smRedPatt {
+  display: none;
+}
+
+.bigRedPattern {
+  position: relative;
+  top: 0;
+}
+
+.bigRedPattern::before {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  max-width: 450px;
+  z-index: -1;
+  background-image: url('/assets/images/redPat.svg');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.passion {
+  position: relative;
+  z-index: 2;
+}
+
+.passion::before {
+  position: absolute;
+  content: '';
+  width: 110%;
+  height: 100%;
+  z-index: -1;
+  background-image: url('/assets/images/passPattern.png');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.collabrations {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.collabrations::before {
+  position: absolute;
+  content: '';
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 45%;
+  z-index: -1;
+  background-image: url('/assets/images/colBGPatt.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.collabrations {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.collabrations::before {
+  position: absolute;
+  content: '';
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 45%;
+  z-index: -1;
+  background-image: url('/assets/images/colBGPatt.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.instaPost {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.instaPost::before {
+  position: absolute;
+  content: '';
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 45%;
+  z-index: -1;
+  background-image: url('/assets/images/colBGPatt.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.familiaSliderMarquee {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.familiaSliderMarquee::before {
+  position: absolute;
+  content: '';
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  z-index: -1;
+  background-image: url('/assets/images/colBGPatt.png');
+  background-position: center 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.bigRedPattern img {
+  max-width: 31rem;
+}
+
+.bluePatt {
+  position: relative;
+}
+
+.bluePatt::before {
+  position: absolute;
+  content: '';
+  z-index: -1;
+  width: 23rem;
+  height: 100%;
+  background-image: url('/assets/images/bluePat.svg');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.blueSMPatt {
+  position: relative;
+}
+
+.blueSMPatt::before {
+  position: absolute;
+  content: '';
+  z-index: -1;
+  width: 8rem;
+  height: 100%;
+  background-image: url('/assets/images/bluePat.svg');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.shopPatt {
+  position: relative;
+}
+
+.shopPatt::before {
+  position: absolute;
+  content: '';
+  z-index: -1;
+  width: 25rem;
+  height: 100%;
+  background-image: url('/assets/images/bluePat.svg');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.shopSMPatt {
+  position: relative;
+}
+
+.shopSMPatt::before {
+  position: absolute;
+  content: '';
+  z-index: -1;
+  width: 13rem;
+  bottom: 2rem;
+  right: 1rem;
+  height: 100%;
+  background-image: url('/assets/images/bluePat.svg');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.authen {
+  position: relative;
+  z-index: 1;
+}
+
+.authen::before {
+  position: absolute;
+  content: '';
+  z-index: -1;
+  top: 25%;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/assets/images/authen.svg');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.passionRed {
+  position: relative;
+  z-index: 1;
+}
+
+.passionRed::before {
+  position: absolute;
+  content: '';
+  z-index: -1;
+  top: 25%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/assets/images/passionRed.svg');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.featuredProds {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fpHoverCont {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  transition: 0.5s ease;
+}
+
+.featuredProds:hover .fpHoverCont {
+  opacity: 1;
+}
+
+.nav-link {
+  color: #000 !important;
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  color: #fff !important;
+  background-color: #ff0009 !important;
+  border: none !important;
+}
+
+/* Faq Sect start */
+
+.accordion .accordion-item {
+  background: transparent !important;
+  border-bottom: 1px solid #000 !important;
+}
+
+.accordion-item {
+  border: none !important;
+}
+
+.accordion .accordion-item button[aria-expanded='true'] {
+}
+
+.accordion button {
+  position: relative;
+  display: block;
+  text-align: left;
+  width: 100%;
+  padding: 1em 0;
+  color: #000;
+  font-size: 1.15rem;
+  font-weight: 400;
+  background: none;
+  outline: none;
+}
+
+.accordion button:hover,
+.accordion button:focus {
+  cursor: pointer;
+  color: #000;
+}
+
+.accordion button:hover::after,
+.accordion button:focus::after {
+  cursor: pointer;
+  color: #000;
+}
+
+.accordion button .accordion-title {
+  padding: 1em 1.5em 1em 0;
+  color: #000;
+  letter-spacing: 3px;
+}
+
+.accordion button .icon {
+  display: inline-block;
+  position: absolute;
+  top: 18px;
+  right: 0;
+  width: 22px;
+  height: 22px;
+  /* border: 1px solid; */
+  /* border-radius: 22px; */
+}
+
+.accordion button .icon::before {
+  display: block;
+  position: absolute;
+  content: '';
+  top: 9px;
+  left: 5px;
+  width: 10px;
+  height: 2px;
+  background: currentColor;
+}
+.accordion button .icon::after {
+  display: block;
+  position: absolute;
+  content: '';
+  top: 5px;
+  left: 9px;
+  width: 2px;
+  height: 10px;
+  background: currentColor;
+}
+
+.accordion button[aria-expanded='true'] {
+  color: #000;
+}
+.accordion button[aria-expanded='true'] .icon::after {
+  width: 0;
+}
+.accordion button[aria-expanded='true'] + .accordion-content {
+  opacity: 1;
+  max-height: 10em;
+  transition: all 200ms linear;
+  will-change: opacity, max-height;
+}
+.accordion .accordion-content {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 200ms linear, max-height 200ms linear;
+  will-change: opacity, max-height;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.accordion .accordion-content p {
+  font-size: 1rem;
+  font-weight: 300;
+  margin: 1em 0;
+}
+
+.accordion .accordion-content img {
+  width: 120px;
+  margin: 1em 0;
+}
+
+/* Faq Sect end */
+
+@media screen and (min-width: 1024px) {
+  .smRedPatt {
+    display: block;
+    position: relative;
+    z-index: 5;
+  }
+
+  .smRedPatt::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    right: -1rem;
+    max-width: 18rem;
+    z-index: -2;
+    background-image: url('/assets/images/redPat.svg');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .authen::before {
+    display: none;
+  }
+
+  .passionRed::before {
+    display: none;
+  }
+}
