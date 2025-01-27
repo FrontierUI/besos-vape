@@ -239,13 +239,14 @@ body {
 
 .bluePatt {
   position: relative;
+  left: 10%;
 }
 
 .bluePatt::before {
   position: absolute;
   content: '';
   z-index: -1;
-  width: 23rem;
+  width: 26rem;
   height: 100%;
   background-image: url('/assets/images/bluePat.svg');
   background-position: center;
@@ -261,9 +262,42 @@ body {
   position: absolute;
   content: '';
   z-index: -1;
-  width: 8rem;
+  width: 10rem;
   height: 100%;
   background-image: url('/assets/images/bluePat.svg');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.dulcePatt {
+  position: relative;
+  left: 10%;
+}
+
+.dulcePatt::before {
+  position: absolute;
+  content: '';
+  z-index: -1;
+  width: 26rem;
+  height: 100%;
+  background-image: url('/assets/images/pinkPatern.svg');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.dulceSMPatt {
+  position: relative;
+}
+
+.dulceSMPatt::before {
+  position: absolute;
+  content: '';
+  z-index: -1;
+  width: 10rem;
+  height: 100%;
+  background-image: url('/assets/images/pinkPatern.svg');
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
@@ -489,7 +523,73 @@ body {
 
 /* Faq Sect end */
 
-@media screen and (min-width: 1024px) {
+.horchattaPatt {
+  position: relative;
+  left: 10%;
+}
+
+.horchattaPatt::before {
+  position: absolute;
+  content: '';
+  z-index: -1;
+  width: 26rem;
+  height: 100%;
+  background-image: url('/assets/images/prodGreyPat.svg');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.horchattaSMPatt {
+  position: relative;
+}
+
+.horchattaSMPatt::before {
+  position: absolute;
+  content: '';
+  z-index: -1;
+  width: 10rem;
+  height: 100%;
+  background-image: url('/assets/images/prodGreyPat.svg');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.feugoPatt {
+  position: relative;
+  left: 10%;
+}
+
+.feugoPatt::before {
+  position: absolute;
+  content: '';
+  z-index: -1;
+  width: 26rem;
+  height: 100%;
+  background-image: url('/assets/images/orangePatt.svg');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.feugoPattSMPatt {
+  position: relative;
+}
+
+.feugoPattSMPatt::before {
+  position: absolute;
+  content: '';
+  z-index: -1;
+  width: 10rem;
+  height: 100%;
+  background-image: url('/assets/images/prodGreyPat.svg');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+/* @media screen and (min-width: 1024px) {
   .smRedPatt {
     display: block;
     position: relative;
@@ -509,7 +609,7 @@ body {
     background-size: contain;
     background-repeat: no-repeat;
   }
-}
+} */
 
 @media screen and (max-width: 768px) {
   .authen::before {
@@ -518,5 +618,21 @@ body {
 
   .passionRed::before {
     display: none;
+  }
+
+  .bluePatt {
+    left: 1rem;
+  }
+
+  .dulcePatt {
+    left: 0;
+  }
+
+  .horchattaPatt {
+    left: 0;
+  }
+
+  .feugoPatt {
+    left: 0;
   }
 }

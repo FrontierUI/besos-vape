@@ -135,3 +135,32 @@ $(function () {
     ],
   });
 });
+
+$(function () {
+  $('.smHorchataMarqueeSlider').slick({
+    autoplay: true,
+    arrows: false,
+    autoplaySpeed: 0,
+    speed: 5000,
+    swipe: false,
+    slidesToShow: 3,
+    cssEase: 'linear',
+    pauseOnFocus: false,
+    pauseOnHover: false,
+    ltr: true,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: { slidesToShow: 3, slidesToScroll: 1, infinite: true },
+      },
+      {
+        breakpoint: 600,
+        settings: { slidesToShow: 3, slidesToScroll: 1, infinite: true },
+      },
+      {
+        breakpoint: 480,
+        settings: { slidesToShow: 3, slidesToScroll: 1, infinite: true },
+      },
+    ],
+  });
+});

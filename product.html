@@ -166,152 +166,225 @@
         </header>
 
         <div class="container">
-          <div class="row flexy px-6">
-            <div class="relative w-full py-3">
-              <div class="prodsSlider">
-                <div class="slicky">
-                  <div
-                    class="flex flex-col lg:flex-row items-start justify-start lg:justify-between w-full max-md:space-y-4"
+          <div class="row w-full flexy px-6">
+            <div class="flexy relative h-full w-full py-3 max-sm:space-y-4">
+              <div class="flexy w-full flex-col relative my-3">
+                <div
+                  id="newJars-tabs"
+                  role="tablist"
+                  aria-orientation="horizontal"
+                  class="nav nav-pills flexy flex-wrap max-md:gap-y-4 gap-x-4 w-full"
+                >
+                  <button
+                    id="dulce-tab"
+                    data-bs-target="#dulce"
+                    aria-controls="dulce"
+                    data-bs-toggle="pill"
+                    aria-selected="true"
+                    role="tab"
+                    type="button"
+                    class="nav-link active tabsButtons px-6 py-[1.25rem] transition-all ease-in-out transform hover:scale-105 duration-300 hover:bg-[#FF0009] hover:!text-white activateTabs hover:!border-none"
                   >
-                    <div class="flex-col w-full lg:w-2/6 itemsStart">
-                      <div
-                        class="uppercase !leading-none grifterBold text-5xl lg:text-8xl"
-                      >
-                        <h1 class="leading-none">blue</h1>
-                        <h1 class="leading-none">berry</h1>
-                        <h1 class="text-[#00C2DC] leading-none">kiss</h1>
-                      </div>
-                    </div>
+                    dulce 1.1
+                  </button>
 
-                    <div class="flexy relative !w-full lg:w-4/6 p-3 lg:p-8">
-                      <div class="flex lg:justify-between">
-                        <div
-                          class="flexy absolute !bottom-12 !left-[6.15rem] blueSMPatt hidden lg:block"
-                        >
-                          <img
-                            src="assets/images/berries.png"
-                            class="img-fluid relative bottom-7 right-6 lg:w-[10rem]"
-                            alt=""
-                          />
-                        </div>
-                        <div
-                          class="absolute z-20 !p-3 w-full left-0 top-3 lg:top-[8rem] max-w-[200px] lg:max-w-[280px] bg-slate-50/[0.55] border border-slate-200 rounded-xl w-full"
-                        >
-                          <div class="flex flex-col space-y-2">
-                            <h2 class="grifterBold text-2xl uppercase">
-                              blueBerry kiss
-                            </h2>
+                  <button
+                    id="blueBerry-tab"
+                    data-bs-target="#blueBerry"
+                    aria-controls="blueBerry"
+                    data-bs-toggle="pill"
+                    aria-selected="false"
+                    role="tab"
+                    type="button"
+                    class="nav-link tabsButtons px-6 py-[1.25rem] transition-all ease-in-out transform hover:scale-105 duration-300 hover:bg-[#FF0009] hover:!text-white hover:!border-none"
+                  >
+                    Blue Berry
+                  </button>
 
-                            <div class="flex flex-col text-sm">
-                              <p><b>Net Weight:</b> 1.25g / 0.44oz</p>
-                              <p><b>Category:</b> Melted Diamonds Vape Pod</p>
-                              <p><b>Strain Type:</b> Indica</p>
-                            </div>
-                          </div>
-                        </div>
+                  <button
+                    id="horchata-tab"
+                    data-bs-target="#horchata"
+                    aria-controls="horchata"
+                    data-bs-toggle="pill"
+                    aria-selected="false"
+                    role="tab"
+                    type="button"
+                    class="nav-link tabsButtons px-6 py-[1.25rem] transition-all ease-in-out transform hover:scale-105 duration-300 hover:bg-[#FF0009] hover:!text-white hover:!border-none"
+                  >
+                    horchata
+                  </button>
 
-                        <div class="flexy bluePatt w-full">
-                          <img
-                            src="assets/images/blueBerry.png"
-                            class="img-fluid rotate-[4.5deg] duration-300 hover:rotate-[6deg] w-[15rem] lg:w-[23rem]"
-                            alt=""
-                          />
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="flex space-y-1 w-full lg:w-2/6">
-                      <p>
-                        Experience the ultimate in cannabis lifestyle with the
-                        designed to enhance your sessions with premium quality
-                        and a touch of Be$os®️ style.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div class="itemsEnd lg:justify-between">
-                    <div class="d-none d-lg-block">
-                      <div class="blueSocials flex gap-x-2">
-                        <a href="javascript:void(0)" class="w-12">
-                          <img
-                            src="assets/images/blueX.png"
-                            class="img-fluid"
-                            alt=""
-                          />
-                        </a>
-                        <a href="javascript:void(0)" class="w-12">
-                          <img
-                            src="assets/images/blueInsta.png"
-                            class="img-fluid"
-                            alt=""
-                          />
-                        </a>
-                      </div>
-                    </div>
-                    <div
-                      class="relative max-w-sm h-full rounded-xl max-md:mt-4 !py-3"
-                    >
-                      <div class="smallMarqueeSlide">
-                        <div class="slicky mx-2.5 max-h-full">
-                          <img
-                            src="assets/images/prods/strawSMslider.png"
-                            class="img-fluid"
-                            alt=""
-                          />
-                        </div>
-                        <div class="slicky mx-2.5 max-h-full">
-                          <img
-                            src="assets/images/prods/blueSMslider.png"
-                            class="img-fluid"
-                            alt=""
-                          />
-                        </div>
-                        <div class="slicky mx-2.5 max-h-full">
-                          <img
-                            src="assets/images/prods/strawSMslider.png"
-                            class="img-fluid"
-                            alt=""
-                          />
-                        </div>
-                        <div class="slicky mx-2.5 max-h-full">
-                          <img
-                            src="assets/images/prods/blueSMslider.png"
-                            class="img-fluid"
-                            alt=""
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  <button
+                    id="fuego-tab"
+                    data-bs-target="#fuego"
+                    aria-controls="fuego"
+                    data-bs-toggle="pill"
+                    aria-selected="false"
+                    role="tab"
+                    type="button"
+                    class="nav-link tabsButtons px-6 py-[1.25rem] transition-all ease-in-out transform hover:scale-105 duration-300 hover:bg-[#FF0009] hover:!text-white hover:!border-none"
+                  >
+                    fuego og
+                  </button>
                 </div>
 
-                <div class="slicky">
-                  <div
-                    class="flex flex-col lg:flex-row items-start justify-start lg:justify-between w-full max-md:space-y-4"
-                  >
-                    <div class="flex-col w-full lg:w-2/6 itemsStart">
-                      <div
-                        class="uppercase !leading-none grifterBold text-5xl lg:text-8xl"
-                      >
-                        <h1 class="leading-none">blue</h1>
-                        <h1 class="leading-none">berry</h1>
-                        <h1 class="text-[#00C2DC] leading-none">kiss</h1>
-                      </div>
-                    </div>
+                <div id="newJars-tabs" class="tab-content w-full">
+                  <!-- <div
+                    id="fuego"
+                    aria-labelledby="fuego-tab"
+                    role="tabpanel"
+                    class="tab-pane fade"
+                  ></div> -->
 
-                    <div class="flexy relative !w-full lg:w-4/6 p-3 lg:p-8">
-                      <div class="flex lg:justify-between">
+                  <div
+                    id="dulce"
+                    aria-labelledby="dulce-tab"
+                    role="tabpanel"
+                    class="active tab-pane fade show"
+                  >
+                    <div
+                      class="itemsStart flex-col lg:flex-row lg:justify-between w-full h-full max-md:space-y-4 max-sm:pt-6"
+                    >
+                      <div class="flex-col w-full lg:w-1/4 itemsStart">
                         <div
-                          class="flexy absolute !bottom-12 !left-[6.15rem] blueSMPatt hidden lg:block"
+                          class="uppercase !leading-none grifterBold text-5xl lg:text-7xl"
+                        >
+                          <h1 class="leading-none">be$itos</h1>
+                          <h1 class="leading-none text-[#B238B3]">Dulce 1.1</h1>
+                        </div>
+                      </div>
+
+                      <div class="flexy relative w-full lg:w-2/4 p-3 lg:p-8">
+                        <div
+                          class="flexy absolute !bottom-8 !left-[6%] dulceSMPatt hidden lg:block"
                         >
                           <img
-                            src="assets/images/berries.png"
-                            class="img-fluid relative bottom-7 right-6 lg:w-[10rem]"
+                            src="assets/images/gummies.png"
+                            class="img-fluid relative bottom-0 right-6 lg:w-[12rem]"
                             alt=""
                           />
                         </div>
                         <div
-                          class="absolute z-20 !p-3 w-full left-0 top-3 lg:top-[8rem] max-w-[200px] lg:max-w-[280px] bg-slate-50/[0.55] border border-slate-200 rounded-xl w-full"
+                          class="absolute z-20 !p-3 w-full left-0 lg:left-24 top-3 lg:top-[5rem] max-w-[200px] lg:max-w-[280px] bg-slate-50/[0.55] border border-slate-200 rounded-xl w-full"
+                        >
+                          <div class="flex flex-col space-y-2">
+                            <h2 class="grifterBold text-2xl uppercase">
+                              be$itos dulce 1.1
+                            </h2>
+
+                            <div class="flex flex-col text-sm">
+                              <p><b>Net Weight:</b> 1.25g / 0.44oz</p>
+                              <p><b>Category:</b> Melted Diamonds Vape Pod</p>
+                              <p><b>Strain Type:</b> Indica</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="flexy dulcePatt w-full">
+                          <img
+                            src="assets/images/prods/dulceJar.png"
+                            class="img-fluid relative left-8 lg:left-[3rem] rotate-[4.5deg] duration-300 hover:rotate-[6deg] lg:w-[24rem]"
+                            alt=""
+                          />
+                        </div>
+                      </div>
+
+                      <div class="flex space-y-1 w-full lg:w-1/4">
+                        <p>
+                          Experience the ultimate in cannabis lifestyle with the
+                          designed to enhance your sessions with premium quality
+                          and a touch of Be$os®️ style.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div
+                      class="!w-full itemsEnd absolute bottom-0 lg:justify-between"
+                    >
+                      <div class="d-none d-lg-block">
+                        <div class="blueSocials flex gap-x-2">
+                          <a href="javascript:void(0)" class="w-12">
+                            <img
+                              src="assets/images/xPink.svg"
+                              class="img-fluid"
+                              alt=""
+                            />
+                          </a>
+                          <a href="javascript:void(0)" class="w-12">
+                            <img
+                              src="assets/images/instaPink.svg"
+                              class="img-fluid"
+                              alt=""
+                            />
+                          </a>
+                        </div>
+                      </div>
+                      <div
+                        class="relative max-w-[25%] h-full rounded-xl max-md:mt-4 !py-3"
+                      >
+                        <div class="smallMarqueeSlide w-full">
+                          <div class="slicky mx-2.5 max-h-full">
+                            <img
+                              src="assets/images/hjsm.png"
+                              class="img-fluid"
+                              alt=""
+                            />
+                          </div>
+                          <div class="slicky mx-2.5 max-h-full">
+                            <img
+                              src="assets/images/fjsm.png"
+                              class="img-fluid"
+                              alt=""
+                            />
+                          </div>
+                          <div class="slicky mx-2.5 max-h-full">
+                            <img
+                              src="assets/images/djsm.png"
+                              class="img-fluid"
+                              alt=""
+                            />
+                          </div>
+                          <div class="slicky mx-2.5 max-h-full">
+                            <img
+                              src="assets/images/fjsm.png"
+                              class="img-fluid"
+                              alt=""
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div
+                    id="blueBerry"
+                    aria-labelledby="blueBerry-tab"
+                    role="tabpanel"
+                    class="tab-pane fade"
+                  >
+                    <div
+                      class="itemsStart flex-col lg:flex-row lg:justify-between w-full h-full max-md:space-y-4 max-sm:pt-6"
+                    >
+                      <div class="flex-col w-full lg:w-1/4 itemsStart">
+                        <div
+                          class="uppercase !leading-none grifterBold text-5xl lg:text-7xl"
+                        >
+                          <h1 class="leading-none">be$itos</h1>
+                          <h1 class="leading-none text-[#928C85]">horchata</h1>
+                        </div>
+                      </div>
+
+                      <div class="flexy relative w-full lg:w-2/4 p-3 lg:p-8">
+                        <div
+                          class="flexy absolute !bottom-[3.25rem] !left-[6%] blueSMPatt hidden lg:block"
+                        >
+                          <img
+                            src="assets/images/berries.png"
+                            class="img-fluid relative bottom-4 right-4 lg:w-[10rem]"
+                            alt=""
+                          />
+                        </div>
+                        <div
+                          class="absolute z-20 !p-3 w-full left-0 lg:left-24 top-3 lg:top-[5rem] max-w-[200px] lg:max-w-[280px] bg-slate-50/[0.55] border border-slate-200 rounded-xl w-full"
                         >
                           <div class="flex flex-col space-y-2">
                             <h2 class="grifterBold text-2xl uppercase">
@@ -325,76 +398,318 @@
                             </div>
                           </div>
                         </div>
-
                         <div class="flexy bluePatt w-full">
                           <img
                             src="assets/images/blueBerry.png"
-                            class="img-fluid rotate-[4.5deg] duration-300 hover:rotate-[6deg] w-[15rem] lg:w-[23rem]"
+                            class="img-fluid relative !left-5 max-sm:!left-0 rotate-[4.5deg] duration-300 hover:rotate-[6deg] lg:w-[25rem]"
                             alt=""
                           />
                         </div>
                       </div>
+
+                      <div class="flex space-y-1 w-full lg:w-1/4">
+                        <p>
+                          Experience the ultimate in cannabis lifestyle with the
+                          designed to enhance your sessions with premium quality
+                          and a touch of Be$os®️ style.
+                        </p>
+                      </div>
                     </div>
 
-                    <div class="flex space-y-1 w-full lg:w-2/6">
-                      <p>
-                        Experience the ultimate in cannabis lifestyle with the
-                        designed to enhance your sessions with premium quality
-                        and a touch of Be$os®️ style.
-                      </p>
+                    <div
+                      class="w-full itemsEnd absolute bottom-0 lg:justify-between"
+                    >
+                      <div class="d-none d-lg-block">
+                        <div class="blueSocials flex gap-x-2">
+                          <a href="javascript:void(0)" class="w-12">
+                            <img
+                              src="assets/images/blueX.png"
+                              class="img-fluid"
+                              alt=""
+                            />
+                          </a>
+                          <a href="javascript:void(0)" class="w-12">
+                            <img
+                              src="assets/images/blueInsta.png"
+                              class="img-fluid"
+                              alt=""
+                            />
+                          </a>
+                        </div>
+                      </div>
+
+                      <div
+                        class="relative max-w-[25%] h-full rounded-xl max-md:mt-4 !py-3 block"
+                      >
+                        <div class="smHorchataMarqueeSlider">
+                          <div class="slicky mx-2.5 max-h-full">
+                            <img
+                              src="assets/images/hjsm.png"
+                              class="img-fluid"
+                              alt=""
+                            />
+                          </div>
+                          <div class="slicky mx-2.5 max-h-full">
+                            <img
+                              src="assets/images/fjsm.png"
+                              class="img-fluid"
+                              alt=""
+                            />
+                          </div>
+                          <div class="slicky mx-2.5 max-h-full">
+                            <img
+                              src="assets/images/djsm.png"
+                              class="img-fluid"
+                              alt=""
+                            />
+                          </div>
+                          <div class="slicky mx-2.5 max-h-full">
+                            <img
+                              src="assets/images/fjsm.png"
+                              class="img-fluid"
+                              alt=""
+                            />
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
 
-                  <div class="itemsEnd lg:justify-between">
-                    <div class="d-none d-lg-block">
-                      <div class="blueSocials flex gap-x-2">
-                        <a href="javascript:void(0)" class="w-12">
+                  <div
+                    id="horchata"
+                    aria-labelledby="horchata-tab"
+                    role="tabpanel"
+                    class="tab-pane fade"
+                  >
+                    <div
+                      class="itemsStart flex-col lg:flex-row lg:justify-between w-full h-full max-md:space-y-4 max-sm:pt-6"
+                    >
+                      <div class="flex-col w-full lg:w-1/4 itemsStart">
+                        <div
+                          class="uppercase !leading-none grifterBold text-5xl lg:text-7xl"
+                        >
+                          <h1 class="leading-none">be$itos</h1>
+                          <h1 class="leading-none text-[#928C85]">horchata</h1>
+                        </div>
+                      </div>
+
+                      <div class="flexy relative w-full lg:w-2/4 p-3 lg:p-8">
+                        <div
+                          class="flexy absolute !bottom-8 !left-[6%] horchattaSMPatt hidden lg:block"
+                        >
                           <img
-                            src="assets/images/blueX.png"
-                            class="img-fluid"
+                            src="assets/images/splash.png"
+                            class="img-fluid relative bottom-0 right-8 lg:w-[12rem]"
                             alt=""
                           />
-                        </a>
-                        <a href="javascript:void(0)" class="w-12">
+                        </div>
+                        <div
+                          class="absolute z-20 !p-3 w-full left-0 lg:left-24 top-3 lg:top-[5rem] max-w-[200px] lg:max-w-[280px] bg-slate-50/[0.55] border border-slate-200 rounded-xl w-full"
+                        >
+                          <div class="flex flex-col space-y-2">
+                            <h2 class="grifterBold text-2xl uppercase">
+                              be$itos horchata
+                            </h2>
+
+                            <div class="flex flex-col text-sm">
+                              <p><b>Net Weight:</b> 1.25g / 0.44oz</p>
+                              <p><b>Category:</b> Melted Diamonds Vape Pod</p>
+                              <p><b>Strain Type:</b> Indica</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="flexy horchattaPatt w-full">
                           <img
-                            src="assets/images/blueInsta.png"
-                            class="img-fluid"
+                            src="assets/images/prods/jarHorchata.png"
+                            class="img-fluid relative left-8 lg:left-[3rem] rotate-[4.5deg] duration-300 hover:rotate-[6deg] lg:w-[24rem]"
                             alt=""
                           />
-                        </a>
+                        </div>
+                      </div>
+
+                      <div class="flex space-y-1 w-full lg:w-1/4">
+                        <p>
+                          Experience the ultimate in cannabis lifestyle with the
+                          designed to enhance your sessions with premium quality
+                          and a touch of Be$os®️ style.
+                        </p>
                       </div>
                     </div>
+
                     <div
-                      class="relative max-w-sm h-full rounded-xl max-md:mt-4 !py-3"
+                      class="w-full itemsEnd absolute bottom-0 lg:justify-between"
                     >
-                      <div class="smallMarqueeSlide">
-                        <div class="slicky mx-2.5 max-h-full">
+                      <div class="d-none d-lg-block">
+                        <div class="blueSocials flex gap-x-2">
+                          <a href="javascript:void(0)" class="w-12">
+                            <img
+                              src="assets/images/greyX.svg"
+                              class="img-fluid"
+                              alt=""
+                            />
+                          </a>
+                          <a href="javascript:void(0)" class="w-12">
+                            <img
+                              src="assets/images/greyInsta.svg"
+                              class="img-fluid"
+                              alt=""
+                            />
+                          </a>
+                        </div>
+                      </div>
+
+                      <div
+                        class="relative max-w-[25%] h-full rounded-xl max-md:mt-4 !py-3 block"
+                      >
+                        <div class="smHorchataMarqueeSlider">
+                          <div class="slicky mx-2.5 max-h-full">
+                            <img
+                              src="assets/images/hjsm.png"
+                              class="img-fluid"
+                              alt=""
+                            />
+                          </div>
+                          <div class="slicky mx-2.5 max-h-full">
+                            <img
+                              src="assets/images/fjsm.png"
+                              class="img-fluid"
+                              alt=""
+                            />
+                          </div>
+                          <div class="slicky mx-2.5 max-h-full">
+                            <img
+                              src="assets/images/djsm.png"
+                              class="img-fluid"
+                              alt=""
+                            />
+                          </div>
+                          <div class="slicky mx-2.5 max-h-full">
+                            <img
+                              src="assets/images/fjsm.png"
+                              class="img-fluid"
+                              alt=""
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div
+                    id="fuego"
+                    aria-labelledby="fuego-tab"
+                    role="tabpanel"
+                    class="tab-pane fade"
+                  >
+                    <div
+                      class="itemsStart flex-col lg:flex-row lg:justify-between w-full h-full max-md:space-y-4 max-sm:pt-6"
+                    >
+                      <div class="flex-col w-full lg:w-1/4 itemsStart">
+                        <div
+                          class="uppercase !leading-none grifterBold text-5xl lg:text-7xl"
+                        >
+                          <h1 class="leading-none">be$itos</h1>
+                          <h1 class="leading-none text-[#C63D02]">feugo</h1>
+                        </div>
+                      </div>
+
+                      <div class="flexy relative w-full lg:w-2/4 p-3 lg:p-8">
+                        <div
+                          class="flexy absolute !bottom-8 !left-[6%] feugoSMPatt hidden lg:block"
+                        >
                           <img
-                            src="assets/images/prods/strawSMslider.png"
-                            class="img-fluid"
+                            src="assets/images/splash.png"
+                            class="img-fluid relative bottom-0 right-8 lg:w-[12rem]"
                             alt=""
                           />
                         </div>
-                        <div class="slicky mx-2.5 max-h-full">
+                        <div
+                          class="absolute z-20 !p-3 w-full left-0 lg:left-24 top-3 lg:top-[5rem] max-w-[200px] lg:max-w-[280px] bg-slate-50/[0.55] border border-slate-200 rounded-xl w-full"
+                        >
+                          <div class="flex flex-col space-y-2">
+                            <h2 class="grifterBold text-2xl uppercase">
+                              be$itos feugo og
+                            </h2>
+
+                            <div class="flex flex-col text-sm">
+                              <p><b>Net Weight:</b> 1.25g / 0.44oz</p>
+                              <p><b>Category:</b> Melted Diamonds Vape Pod</p>
+                              <p><b>Strain Type:</b> Indica</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="flexy feugoPatt w-full">
                           <img
-                            src="assets/images/prods/blueSMslider.png"
-                            class="img-fluid"
+                            src="assets/images/prods/fuego.png"
+                            class="img-fluid relative left-8 lg:left-[3rem] rotate-[4.5deg] duration-300 hover:rotate-[6deg] lg:w-[24rem]"
                             alt=""
                           />
                         </div>
-                        <div class="slicky mx-2.5 max-h-full">
-                          <img
-                            src="assets/images/prods/strawSMslider.png"
-                            class="img-fluid"
-                            alt=""
-                          />
+                      </div>
+
+                      <div class="flex space-y-1 w-full lg:w-1/4">
+                        <p>
+                          Experience the ultimate in cannabis lifestyle with the
+                          designed to enhance your sessions with premium quality
+                          and a touch of Be$os®️ style.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div
+                      class="w-full itemsEnd absolute bottom-0 lg:justify-between"
+                    >
+                      <div class="d-none d-lg-block">
+                        <div class="blueSocials flex gap-x-2">
+                          <a href="javascript:void(0)" class="w-12">
+                            <img
+                              src="assets/images/greyX.svg"
+                              class="img-fluid"
+                              alt=""
+                            />
+                          </a>
+                          <a href="javascript:void(0)" class="w-12">
+                            <img
+                              src="assets/images/greyInsta.svg"
+                              class="img-fluid"
+                              alt=""
+                            />
+                          </a>
                         </div>
-                        <div class="slicky mx-2.5 max-h-full">
-                          <img
-                            src="assets/images/prods/blueSMslider.png"
-                            class="img-fluid"
-                            alt=""
-                          />
+                      </div>
+
+                      <div
+                        class="relative max-w-[25%] h-full rounded-xl max-md:mt-4 !py-3 block"
+                      >
+                        <div class="smHorchataMarqueeSlider">
+                          <div class="slicky mx-2.5 max-h-full">
+                            <img
+                              src="assets/images/hjsm.png"
+                              class="img-fluid"
+                              alt=""
+                            />
+                          </div>
+                          <div class="slicky mx-2.5 max-h-full">
+                            <img
+                              src="assets/images/fjsm.png"
+                              class="img-fluid"
+                              alt=""
+                            />
+                          </div>
+                          <div class="slicky mx-2.5 max-h-full">
+                            <img
+                              src="assets/images/djsm.png"
+                              class="img-fluid"
+                              alt=""
+                            />
+                          </div>
+                          <div class="slicky mx-2.5 max-h-full">
+                            <img
+                              src="assets/images/fjsm.png"
+                              class="img-fluid"
+                              alt=""
+                            />
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -404,6 +719,7 @@
             </div>
           </div>
         </div>
+        <!-- <div class="prodsSlider"></div> -->
       </section>
 
       <section class="relative w-full h-full">
