@@ -411,6 +411,39 @@ body {
   border: none !important;
 }
 
+/* Products Flip Cards Sect start */
+
+/* .productsImgDesc {
+  perspective: 1500px;
+}
+
+.prodCards {
+  position: relative;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  transform-origin: center right;
+}
+
+.prodCards.isFlipped {
+  transform: translateX(-100%) rotateY(-180deg);
+}
+
+.prodFace {
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.cardFront {
+  background: transparent;
+}
+
+.cardBack {
+  background: transparent;
+  transform: rotateY(180deg);
+} */
+
+/* Products Flip Cards Sect End */
+
 /* Faq Sect start */
 
 .accordion .accordion-item {

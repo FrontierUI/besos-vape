@@ -29,12 +29,96 @@
       crossorigin="anonymous"
     />
 
+    <style>
+      .cards {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        perspective: 1000px;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+      }
+
+      .cards__single {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        cursor: pointer;
+        -webkit-transition: transform 0.6s;
+        transform-style: preserve-3d;
+        transition: 0.5s;
+        -webkit-transition: 0.5s;
+        position: relative;
+        transition: transform 0.6s;
+        -webkit-transition: transform 0.6s;
+      }
+
+      .cards__single.flip {
+        transform: rotateY(180deg);
+        -webkit-transform: rotateY(180deg);
+      }
+
+      .cards__artist,
+      .cards__album {
+        color: #20263f;
+      }
+
+      .cards__front img,
+      .cards__back img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      .cards__front,
+      .cards__back {
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        display: flex;
+        flex-direction: column;
+      }
+      .cards__front {
+        height: 100%;
+        transform: rotateX(0deg);
+        -webkit-transform: rotateX(0deg);
+      }
+
+      .cards__back {
+        transform: rotateY(180deg);
+        -webkit-transform: rotateY(180deg);
+        position: absolute;
+        /* text-align: center; */
+        right: 0;
+        left: 0;
+        top: 0;
+        bottom: 0;
+      }
+
+      @media (min-width: 1024px) {
+        .cards {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          align-content: center;
+          position: relative;
+          perspective: 1000px;
+        }
+      }
+    </style>
+
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
 
   <body>
     <main class="wraperrd position-relative w-full h-full z-[1]">
       <section class="relative w-full h-full greyPatt z-[5]">
+        <div
+          class="absolute lg:top-[22%] w-full h-[200px] -z-[1] bg-no-repeat bg-cover bg-center"
+          style="background-image: url('/assets/images/greyBgPatt.svg')"
+        ></div>
         <header
           class="flex shadow-md py-2 px-7 bg-white min-h-[70px] tracking-wide relative z-50 lg:!border-b lg:border-gray-400"
         >
@@ -132,7 +216,7 @@
                 <li class="py-2 px-3">
                   <a
                     href="inquiries.html"
-                    class="block font-semibold text-base text-black hover:text-[#FF0009]"
+                    class="block font-semibold text-base text-[#FF0009] hover:!text-[#FF0009]"
                     >INQUIRIES</a
                   >
                 </li>
@@ -173,21 +257,8 @@
                   id="newJars-tabs"
                   role="tablist"
                   aria-orientation="horizontal"
-                  class="nav nav-pills flexy flex-wrap max-md:gap-y-4 gap-x-4 w-full"
+                  class="nav nav-pills flexy flex-wrap max-md:gap-y-4 gap-x-4 w-full h-full"
                 >
-                  <button
-                    id="dulce-tab"
-                    data-bs-target="#dulce"
-                    aria-controls="dulce"
-                    data-bs-toggle="pill"
-                    aria-selected="true"
-                    role="tab"
-                    type="button"
-                    class="nav-link active tabsButtons px-6 py-[1.25rem] transition-all ease-in-out transform hover:scale-105 duration-300 hover:bg-[#FF0009] hover:!text-white activateTabs hover:!border-none"
-                  >
-                    dulce 1.1
-                  </button>
-
                   <button
                     id="blueBerry-tab"
                     data-bs-target="#blueBerry"
@@ -196,9 +267,22 @@
                     aria-selected="false"
                     role="tab"
                     type="button"
+                    class="nav-link active tabsButtons activateTabs px-6 py-[1.25rem] transition-all ease-in-out transform hover:scale-105 duration-300 hover:bg-[#FF0009] hover:!text-white hover:!border-none"
+                  >
+                    All In One
+                  </button>
+
+                  <button
+                    id="dulce-tab"
+                    data-bs-target="#dulce"
+                    aria-controls="dulce"
+                    data-bs-toggle="pill"
+                    aria-selected="true"
+                    role="tab"
+                    type="button"
                     class="nav-link tabsButtons px-6 py-[1.25rem] transition-all ease-in-out transform hover:scale-105 duration-300 hover:bg-[#FF0009] hover:!text-white hover:!border-none"
                   >
-                    Blue Berry
+                    Prerolls
                   </button>
 
                   <button
@@ -211,7 +295,7 @@
                     type="button"
                     class="nav-link tabsButtons px-6 py-[1.25rem] transition-all ease-in-out transform hover:scale-105 duration-300 hover:bg-[#FF0009] hover:!text-white hover:!border-none"
                   >
-                    horchata
+                    edibles
                   </button>
 
                   <button
@@ -224,23 +308,354 @@
                     type="button"
                     class="nav-link tabsButtons px-6 py-[1.25rem] transition-all ease-in-out transform hover:scale-105 duration-300 hover:bg-[#FF0009] hover:!text-white hover:!border-none"
                   >
-                    fuego og
+                    flowers
                   </button>
                 </div>
 
                 <div id="newJars-tabs" class="tab-content w-full">
-                  <!-- <div
-                    id="fuego"
-                    aria-labelledby="fuego-tab"
+                  <div
+                    id="blueBerry"
+                    aria-labelledby="blueBerry-tab"
                     role="tabpanel"
-                    class="tab-pane fade"
-                  ></div> -->
+                    class="active tab-pane fade show"
+                  >
+                    <div
+                      class="itemsStart flex-col lg:flex-row lg:justify-between w-full h-full max-md:space-y-4 max-sm:pt-6"
+                    >
+                      <div class="flex-col w-full lg:w-1/4 itemsStart">
+                        <div
+                          class="uppercase !leading-none grifterBold text-5xl lg:text-[4rem]"
+                        >
+                          <h1 class="leading-none">blueBerry</h1>
+                          <h1 class="leading-none text-[#00C2Dc]">kiss</h1>
+                        </div>
+                      </div>
+
+                      <div class="flexy relative w-full lg:w-2/4 p-3 lg:p-8">
+                        <div
+                          class="flexy absolute !bottom-[3.25rem] !left-[6%] blueSMPatt hidden lg:block"
+                        >
+                          <img
+                            src="assets/images/berries.png"
+                            class="img-fluid relative bottom-4 right-4 lg:w-[10rem]"
+                            alt=""
+                          />
+                        </div>
+                        <div
+                          class="absolute z-20 !p-3 w-full left-0 lg:left-24 top-3 lg:top-[5rem] max-w-[200px] lg:max-w-[280px] bg-slate-50/[0.55] border border-slate-200 rounded-xl w-full"
+                        >
+                          <div class="flex flex-col space-y-2">
+                            <h2 class="grifterBold text-2xl uppercase">
+                              blueBerry kiss
+                            </h2>
+
+                            <div class="flex flex-col text-sm">
+                              <p><b>Net Weight:</b> 1.25g / 0.44oz</p>
+                              <p><b>Category:</b> Melted Diamonds Vape Pod</p>
+                              <p><b>Strain Type:</b> Indica</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="flexy bluePatt w-full">
+                          <img
+                            src="assets/images/blueBerry.png"
+                            class="img-fluid relative !left-5 max-sm:!left-0 rotate-[4.5deg] duration-300 hover:rotate-[6deg] lg:w-[25rem]"
+                            alt=""
+                          />
+                        </div>
+                      </div>
+
+                      <div class="flex space-y-1 w-full lg:w-1/4">
+                        <p>
+                          Experience the ultimate in cannabis lifestyle with the
+                          designed to enhance your sessions with premium quality
+                          and a touch of Be$os®️ style.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div
+                      class="w-full itemsEnd absolute lg:top-[17%] lg:justify-between max-sm:!items-start max-sm:!justify-start"
+                    >
+                      <div class="d-none d-lg-block">
+                        <div class="blueSocials flex gap-x-2">
+                          <a href="javascript:void(0)" class="w-12">
+                            <img
+                              src="assets/images/blueX.png"
+                              class="img-fluid"
+                              alt=""
+                            />
+                          </a>
+                          <a href="javascript:void(0)" class="w-12">
+                            <img
+                              src="assets/images/blueInsta.png"
+                              class="img-fluid"
+                              alt=""
+                            />
+                          </a>
+                        </div>
+                      </div>
+
+                      <div
+                        class="relative max-w-[25%] h-full rounded-xl max-md:mt-4 !py-3 block"
+                      >
+                        <div class="smHorchataMarqueeSlider">
+                          <div class="slicky mx-2 max-h-full">
+                            <img
+                              src="assets/images/hjsm.png"
+                              class="img-fluid"
+                              alt=""
+                            />
+                          </div>
+                          <div class="slicky mx-2 max-h-full">
+                            <img
+                              src="assets/images/fjsm.png"
+                              class="img-fluid"
+                              alt=""
+                            />
+                          </div>
+                          <div class="slicky mx-2 max-h-full">
+                            <img
+                              src="assets/images/djsm.png"
+                              class="img-fluid"
+                              alt=""
+                            />
+                          </div>
+                          <div class="slicky mx-2 max-h-full">
+                            <img
+                              src="assets/images/fjsm.png"
+                              class="img-fluid"
+                              alt=""
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div
+                      class="py-10 relative flex items-center justify-center flex-col w-full h-full space-y-5 space-x-5"
+                    >
+                      <div class="cards space-x-5 space-y-5">
+                        <div class="cards__single relative lg:top-3">
+                          <div class="cards__front">
+                            <img
+                              src="assets/images/featuredProds/pinkResImg.png"
+                              class="img-fluid"
+                              alt=""
+                            />
+                          </div>
+                          <div class="cards__back">
+                            <img
+                              src="assets/images/featuredProds/pinkResDesc.png"
+                              class="img-fluid"
+                              alt=""
+                            />
+                          </div>
+                        </div>
+
+                        <div class="cards__single">
+                          <div class="cards__front">
+                            <img
+                              src="assets/images/featuredProds/horchataFlav.png"
+                              class="img-fluid"
+                              alt=""
+                            />
+                          </div>
+                          <div class="cards__back">
+                            <img
+                              src="assets/images/featuredProds/horchattaDes.png"
+                              class="img-fluid"
+                              alt=""
+                            />
+                          </div>
+                        </div>
+
+                        <div class="cards__single">
+                          <div class="cards__front">
+                            <img
+                              src="assets/images/featuredProds/berryFlav.png"
+                              class="img-fluid"
+                              alt=""
+                            />
+                          </div>
+                          <div class="cards__back">
+                            <img
+                              src="assets/images/featuredProds/berryFlavDesc.png"
+                              class="img-fluid"
+                              alt=""
+                            />
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="cards space-x-5 space-y-5">
+                        <div class="cards__single relative lg:top-3">
+                          <div class="cards__front">
+                            <img
+                              src="assets/images/featuredProds/saborFlav.png"
+                              class="img-fluid"
+                              alt=""
+                            />
+                          </div>
+                          <div class="cards__back">
+                            <img
+                              src="assets/images/featuredProds/saborFlavDesc.png"
+                              class="img-fluid"
+                              alt=""
+                            />
+                          </div>
+                        </div>
+
+                        <div class="cards__single">
+                          <div class="cards__front">
+                            <img
+                              src="assets/images/featuredProds/pinaFlavor.png"
+                              class="img-fluid"
+                              alt=""
+                            />
+                          </div>
+                          <div class="cards__back">
+                            <img
+                              src="assets/images/featuredProds/pinaFlavorDesc.png"
+                              class="img-fluid"
+                              alt=""
+                            />
+                          </div>
+                        </div>
+
+                        <div class="cards__single">
+                          <div class="cards__front">
+                            <img
+                              src="assets/images/featuredProds/mangoFlavor.png"
+                              class="img-fluid"
+                              alt=""
+                            />
+                          </div>
+                          <div class="cards__back">
+                            <img
+                              src="assets/images/featuredProds/mangoFlavorDesc.png"
+                              class="img-fluid"
+                              alt=""
+                            />
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="cards space-x-5 space-y-5">
+                        <div class="cards__single relative lg:top-3">
+                          <div class="cards__front">
+                            <img
+                              src="assets/images/featuredProds/frozenFlav.png"
+                              class="img-fluid"
+                              alt=""
+                            />
+                          </div>
+                          <div class="cards__back">
+                            <img
+                              src="assets/images/featuredProds/frozenFlavDesc.png"
+                              class="img-fluid"
+                              alt=""
+                            />
+                          </div>
+                        </div>
+
+                        <div class="cards__single">
+                          <div class="cards__front">
+                            <img
+                              src="assets/images/featuredProds/cherryFlavir.png"
+                              class="img-fluid"
+                              alt=""
+                            />
+                          </div>
+                          <div class="cards__back">
+                            <img
+                              src="assets/images/featuredProds/cherryFlavirDesc.png"
+                              class="img-fluid"
+                              alt=""
+                            />
+                          </div>
+                        </div>
+
+                        <div class="cards__single">
+                          <div class="cards__front">
+                            <img
+                              src="assets/images/featuredProds/sourSkittlesFlav.png"
+                              class="img-fluid"
+                              alt=""
+                            />
+                          </div>
+                          <div class="cards__back">
+                            <img
+                              src="assets/images/featuredProds/sourSkittlesFlavDesc.png"
+                              class="img-fluid"
+                              alt=""
+                            />
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="cards space-x-5 space-y-5">
+                        <div
+                          class="cards__single d-none d-lg-block relative lg:top-3"
+                        >
+                          <div class="cards__front">
+                            <img
+                              src="assets/images/featuredProds/horchataFlav.png"
+                              class="img-fluid"
+                              alt=""
+                            />
+                          </div>
+                          <div class="cards__back">
+                            <img
+                              src="assets/images/featuredProds/horchattaDes.png"
+                              class="img-fluid"
+                              alt=""
+                            />
+                          </div>
+                        </div>
+
+                        <div class="cards__single d-none d-lg-block">
+                          <div class="cards__front">
+                            <img
+                              src="assets/images/featuredProds/flavMelon.png"
+                              class="img-fluid"
+                              alt=""
+                            />
+                          </div>
+                          <div class="cards__back">
+                            <img
+                              src="assets/images/featuredProds/flavMelonDesc.png"
+                              class="img-fluid"
+                              alt=""
+                            />
+                          </div>
+                        </div>
+
+                        <div class="cards__single">
+                          <div class="cards__front">
+                            <img
+                              src="assets/images/featuredProds/saborFlav.png"
+                              class="img-fluid"
+                              alt=""
+                            />
+                          </div>
+                          <div class="cards__back">
+                            <img
+                              src="assets/images/featuredProds/saborFlavDesc.png"
+                              class="img-fluid"
+                              alt=""
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
 
                   <div
                     id="dulce"
                     aria-labelledby="dulce-tab"
                     role="tabpanel"
-                    class="active tab-pane fade show"
+                    class="tab-pane fade"
                   >
                     <div
                       class="itemsStart flex-col lg:flex-row lg:justify-between w-full h-full max-md:space-y-4 max-sm:pt-6"
@@ -322,126 +737,6 @@
                         class="relative max-w-[25%] h-full rounded-xl max-md:mt-4 !py-3"
                       >
                         <div class="smallMarqueeSlide w-full">
-                          <div class="slicky mx-2.5 max-h-full">
-                            <img
-                              src="assets/images/hjsm.png"
-                              class="img-fluid"
-                              alt=""
-                            />
-                          </div>
-                          <div class="slicky mx-2.5 max-h-full">
-                            <img
-                              src="assets/images/fjsm.png"
-                              class="img-fluid"
-                              alt=""
-                            />
-                          </div>
-                          <div class="slicky mx-2.5 max-h-full">
-                            <img
-                              src="assets/images/djsm.png"
-                              class="img-fluid"
-                              alt=""
-                            />
-                          </div>
-                          <div class="slicky mx-2.5 max-h-full">
-                            <img
-                              src="assets/images/fjsm.png"
-                              class="img-fluid"
-                              alt=""
-                            />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div
-                    id="blueBerry"
-                    aria-labelledby="blueBerry-tab"
-                    role="tabpanel"
-                    class="tab-pane fade"
-                  >
-                    <div
-                      class="itemsStart flex-col lg:flex-row lg:justify-between w-full h-full max-md:space-y-4 max-sm:pt-6"
-                    >
-                      <div class="flex-col w-full lg:w-1/4 itemsStart">
-                        <div
-                          class="uppercase !leading-none grifterBold text-5xl lg:text-7xl"
-                        >
-                          <h1 class="leading-none">be$itos</h1>
-                          <h1 class="leading-none text-[#928C85]">horchata</h1>
-                        </div>
-                      </div>
-
-                      <div class="flexy relative w-full lg:w-2/4 p-3 lg:p-8">
-                        <div
-                          class="flexy absolute !bottom-[3.25rem] !left-[6%] blueSMPatt hidden lg:block"
-                        >
-                          <img
-                            src="assets/images/berries.png"
-                            class="img-fluid relative bottom-4 right-4 lg:w-[10rem]"
-                            alt=""
-                          />
-                        </div>
-                        <div
-                          class="absolute z-20 !p-3 w-full left-0 lg:left-24 top-3 lg:top-[5rem] max-w-[200px] lg:max-w-[280px] bg-slate-50/[0.55] border border-slate-200 rounded-xl w-full"
-                        >
-                          <div class="flex flex-col space-y-2">
-                            <h2 class="grifterBold text-2xl uppercase">
-                              blueBerry kiss
-                            </h2>
-
-                            <div class="flex flex-col text-sm">
-                              <p><b>Net Weight:</b> 1.25g / 0.44oz</p>
-                              <p><b>Category:</b> Melted Diamonds Vape Pod</p>
-                              <p><b>Strain Type:</b> Indica</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="flexy bluePatt w-full">
-                          <img
-                            src="assets/images/blueBerry.png"
-                            class="img-fluid relative !left-5 max-sm:!left-0 rotate-[4.5deg] duration-300 hover:rotate-[6deg] lg:w-[25rem]"
-                            alt=""
-                          />
-                        </div>
-                      </div>
-
-                      <div class="flex space-y-1 w-full lg:w-1/4">
-                        <p>
-                          Experience the ultimate in cannabis lifestyle with the
-                          designed to enhance your sessions with premium quality
-                          and a touch of Be$os®️ style.
-                        </p>
-                      </div>
-                    </div>
-
-                    <div
-                      class="w-full itemsEnd absolute bottom-0 lg:justify-between"
-                    >
-                      <div class="d-none d-lg-block">
-                        <div class="blueSocials flex gap-x-2">
-                          <a href="javascript:void(0)" class="w-12">
-                            <img
-                              src="assets/images/blueX.png"
-                              class="img-fluid"
-                              alt=""
-                            />
-                          </a>
-                          <a href="javascript:void(0)" class="w-12">
-                            <img
-                              src="assets/images/blueInsta.png"
-                              class="img-fluid"
-                              alt=""
-                            />
-                          </a>
-                        </div>
-                      </div>
-
-                      <div
-                        class="relative max-w-[25%] h-full rounded-xl max-md:mt-4 !py-3 block"
-                      >
-                        <div class="smHorchataMarqueeSlider">
                           <div class="slicky mx-2.5 max-h-full">
                             <img
                               src="assets/images/hjsm.png"
@@ -722,135 +1017,6 @@
         <!-- <div class="prodsSlider"></div> -->
       </section>
 
-      <section class="relative w-full h-full">
-        <div class="container">
-          <div class="row flexy px-6 w-full">
-            <div class="itemsStart flex-col space-y-5 py-4 w-full">
-              <div
-                class="flexy flex-col lg:flex-row lg:justify-between max-md:space-y-3 w-full relative py-3 border-y border-gray-400"
-              >
-                <div
-                  class="flex items-start justify-center flex-col space-y-1 grifterBold uppercase w-full lg:w-4/5"
-                >
-                  <h1 class="text-2xl lg:text-5xl">Frequently</h1>
-                  <h1 class="text-2xl lg:text-5xl">Asked Questions</h1>
-                </div>
-
-                <hr
-                  class="hidden lg:block absolute right-[15%] top-0 w-[2px] bg-gray-400 !h-full"
-                />
-
-                <div class="flexy p-9">
-                  <img src="assets/images/pappi.svg" class="img-fluid" alt="" />
-                </div>
-              </div>
-
-              <div class="itemsStart w-full pb-8">
-                <div class="accordionCont flex items-start justify-start">
-                  <div class="accordion">
-                    <div class="accordion-item">
-                      <button id="accordion-button-1" aria-expanded="true">
-                        <span class="accordion-title"
-                          >What makes Redeye unique?</span
-                        >
-                        <span class="icon" aria-hidden="true"></span>
-                      </button>
-                      <div class="accordion-content">
-                        <p class="w-5/6">
-                          Live resin is an extract made from fresh frozen plant
-                          material that has not been dried or cured. The flower
-                          buds are harvested and immediately put into a
-                          cryogenic process undergoing freezing temperatures. By
-                          omitting these steps, the plants' terpenoids and
-                          potency are preserved.
-                        </p>
-                        <img
-                          src="assets/images/faqliImg.png"
-                          class="img-fluid"
-                          alt=""
-                        />
-                      </div>
-                    </div>
-
-                    <div class="accordion-item">
-                      <button id="accordion-button-1" aria-expanded="false">
-                        <span class="accordion-title"
-                          >Can I track my Redeye order?</span
-                        >
-                        <span class="icon" aria-hidden="true"></span>
-                      </button>
-                      <div class="accordion-content">
-                        <p class="w-5/6">
-                          Live resin is an extract made from fresh frozen plant
-                          material that has not been dried or cured. The flower
-                          buds are harvested and immediately put into a
-                          cryogenic process undergoing freezing temperatures. By
-                          omitting these steps, the plants' terpenoids and
-                          potency are preserved.
-                        </p>
-                        <img
-                          src="assets/images/faqliImg.png"
-                          class="img-fluid"
-                          alt=""
-                        />
-                      </div>
-                    </div>
-
-                    <div class="accordion-item">
-                      <button id="accordion-button-1" aria-expanded="false">
-                        <span class="accordion-title"
-                          >Does Redeye accept returns or exchanges?</span
-                        >
-                        <span class="icon" aria-hidden="true"></span>
-                      </button>
-                      <div class="accordion-content">
-                        <p class="w-5/6">
-                          Live resin is an extract made from fresh frozen plant
-                          material that has not been dried or cured. The flower
-                          buds are harvested and immediately put into a
-                          cryogenic process undergoing freezing temperatures. By
-                          omitting these steps, the plants' terpenoids and
-                          potency are preserved.
-                        </p>
-                        <img
-                          src="assets/images/faqliImg.png"
-                          class="img-fluid"
-                          alt=""
-                        />
-                      </div>
-                    </div>
-
-                    <div class="accordion-item">
-                      <button id="accordion-button-1" aria-expanded="false">
-                        <span class="accordion-title"
-                          >How can I become a Redeye retailer?</span
-                        >
-                        <span class="icon" aria-hidden="true"></span>
-                      </button>
-                      <div class="accordion-content">
-                        <p class="w-5/6">
-                          Live resin is an extract made from fresh frozen plant
-                          material that has not been dried or cured. The flower
-                          buds are harvested and immediately put into a
-                          cryogenic process undergoing freezing temperatures. By
-                          omitting these steps, the plants' terpenoids and
-                          potency are preserved.
-                        </p>
-                        <img
-                          src="assets/images/faqliImg.png"
-                          class="img-fluid"
-                          alt=""
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section class="py-3 relative w-full h-full instaPost bg-white">
         <div class="container">
           <div class="row w-full h-full flexy flex-col px-6">
@@ -935,7 +1101,6 @@
 
     <script src="assets/js/jquery-3.7.1.js"></script>
     <script src="assets/js/slick.min.js"></script>
-    <!-- <script src="assets/js/bootstrap.bundle.min.js"></script> -->
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
@@ -944,5 +1109,14 @@
     ></script>
 
     <script src="assets/js/main.js"></script>
+
+    <script>
+      const cards = document.querySelectorAll('.cards__single');
+
+      function flipCard() {
+        this.classList.toggle('flip');
+      }
+      cards.forEach((card) => card.addEventListener('click', flipCard));
+    </script>
   </body>
 </html>
